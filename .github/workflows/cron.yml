@@ -11,4 +11,4 @@ jobs:
       - name: Request URL every 10 seconds
         uses: wei/curl@v1.0.0 # 使用wei/curl action来发送请求
         with:
-          args: `${{ secrets.VRECEL_APP_LINK }}`
+          args: ${{ secrets.VRECEL_APP_LINK }}
