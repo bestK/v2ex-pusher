@@ -2,8 +2,7 @@
 v2ex-pusher 是一个可以自动获取最新消息并发送通知的工具。它可以帮助你及时了解 V2EX 社区的最新动态，无需手动刷新页面。
 
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FbestK%2Fv2ex-pusher&hasTrialAvailable=1&showOptionalTeamCreation=false&project-name=v2ex-pusher&env=V2EX_TOKEN&env=JSON_TO_FETCH_BASE64&env=KV_URL&env=KV_REST_API_URL&env=KV_REST_API_TOKEN&env=KV_REST_API_READ_ONLY_TOKEN
-&framework=nextjs&totalProjects=1&remainingProjects=1)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FbestK%2Fv2ex-pusher&hasTrialAvailable=1&showOptionalTeamCreation=false&project-name=v2ex-pusher&env=V2EX_TOKEN&env=JSON_TO_FETCH_BASE64&env=KV_URL&env=KV_REST_API_URL&env=KV_REST_API_TOKEN&env=KV_REST_API_READ_ONLY_TOKEN&framework=nextjs&totalProjects=1&remainingProjects=1)
 
 
 
@@ -32,6 +31,10 @@ KV_REST_API_READ_ONLY_TOKEN="..." <your_vercel_kv_rest_api_token>
         "text": "#replace_hoder#"
     }
 }
+```
+Github secrets define
+```
+secrets.VRECEL_APP_LINK
 ```
 
 ### APIs
