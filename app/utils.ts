@@ -25,17 +25,35 @@ export function queryParams(url: string) {
  * @returns Fetch 请求的响应数据
  */
 export async function jsonToFetch(fetchOptions: string, pushText: string) {
-    // 将 JSON 格式的 Fetch 请求选项解析为对象
+    try {
+        // 将 JSON 格式的 Fetch 请求选项解析为对象
+        fetchOptions = fetchOptions.replace("#replace_hodler#", pushText)
+        const options: FetchOptions = JSON.parse(fetchOptions);
+        // 发送 Fetch 请求并等待响应
+        options.body = JSON.stringify(options.body)
+        const response = await fetch(options.url, options);
 
-    fetchOptions = fetchOptions.replace("#replace_hodler#", pushText)
-    const options: FetchOptions = JSON.parse(fetchOptions);
-    // 发送 Fetch 请求并等待响应
-    options.body = JSON.stringify(options.body)
-    const response = await fetch(options.url, options);
+        // 将响应数据解析为文本格式
+        const data = await response.text();
 
-    // 将响应数据解析为文本格式
-    const data = await response.text();
-
-    // 返回响应数据
-    return data;
+        // 返回响应数据
+        return data;
+    } catch (error) {
+        return error
+    }
 }
+
+
+
+export const getServerSideConfig = () => {
+    if (typeof process === "undefined") {
+        throw Error(
+            "[Server Config] you are importing a nodejs-only module outside of nodejs",
+        );
+    }
+
+    return {
+        v2exToken: process.env.V2EX_TOKEN,
+        jsonToFetchBase64: process.env.JSON_TO_FETCH_BASE64,
+    };
+};

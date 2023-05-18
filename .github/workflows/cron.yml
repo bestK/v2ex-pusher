@@ -1,0 +1,14 @@
+name: Cron Job
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # 每隔10秒钟执行一次任务
+
+jobs:
+  url_request_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request URL every 10 seconds
+        uses: wei/curl@v1.0.0 # 使用wei/curl action来发送请求
+        with:
+          args: `${{ secrets.VRECEL_APP_LINK }}`
