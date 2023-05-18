@@ -1,8 +1,9 @@
 name: Cron Job
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *' # 每隔10秒钟执行一次任务
+    - cron: '*/5 * * * *'
 
 jobs:
   url_request_job:
