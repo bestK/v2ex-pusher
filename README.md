@@ -6,6 +6,7 @@ v2ex-pusher 是一个可以自动获取最新消息并发送通知的工具。�
 
 
 
+
 ### 环境变量
 ``` properties
 V2EX_TOKEN=...<your_v2ex_token>
@@ -28,7 +29,7 @@ KV_REST_API_READ_ONLY_TOKEN="..." <your_vercel_kv_rest_api_token>
     },
     "body": {
         "chat_id": <your_chat_id>,
-        "text": "#replace_hoder#"
+        "text": "#replace_hodler#"
     }
 }
 ```

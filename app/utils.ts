@@ -28,6 +28,8 @@ export async function jsonToFetch(fetchOptions: string, pushText: string) {
     try {
         // 将 JSON 格式的 Fetch 请求选项解析为对象
         fetchOptions = fetchOptions.replace("#replace_hodler#", pushText)
+        console.log(`pushText:${pushText}`)
+        console.log(`fetchOptions:${fetchOptions}`)
         const options: FetchOptions = JSON.parse(fetchOptions);
         // 发送 Fetch 请求并等待响应
         options.body = JSON.stringify(options.body)
